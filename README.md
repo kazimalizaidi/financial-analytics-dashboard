@@ -161,6 +161,12 @@ Potential enhancements include:
 
 ---
 
+# 🎧 Project Soundtrack
+
+*This track was on loop while working on this project*
+
+[rain - reidenshi, Dagamon](https://open.spotify.com/track/2zFpMThv5f6y4OW79sUR91?si=02f60fccdd834af2)
+
 **Star this repository if you found it interesting!** ⭐
 
 made with ❤️ by **kazim**
