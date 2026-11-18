@@ -227,7 +227,6 @@ Download `online_retail_II.xlsx` from the UCI Machine Learning Repository first.
 # 📌 Future Improvements
 
 - Slicers for category and account (they need a desktop Excel session to set up safely)
-- Test and finish the Power Query import template for live CSV or bank-export data
 - Forecast ranges (best and worst case) instead of a single line
 - Multi-currency support and cost-centre breakdowns
 - A short screen recording of the year switch and navigation
