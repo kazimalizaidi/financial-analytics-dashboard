@@ -1,6 +1,6 @@
-// Power Query (M) template: load a ledger CSV in the same shape as the Transactions table.
-Excel: open Data > Get Data > From Other Sources > Blank Query > Advanced Editor,// 
-// paste this in, change the file path, then Close & Load To... the sheet "Transactions" at B5.
+// Power Query (M) template: loads a ledger CSV in the same shape as the Transactions table.
+// Setup: Data > Get Data > From Other Sources > Blank Query > Advanced Editor, paste this in,
+// change the file path, then Close & Load To... a table on a new sheet.
 let
     Source   = Csv.Document(File.Contents("C:\path\to\helmquant_ledger.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
     Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),

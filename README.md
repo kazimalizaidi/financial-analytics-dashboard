@@ -119,6 +119,7 @@ I used a seasonal forecast rather than a straight trend line (`FORECAST` / `TREN
 | Defined names | Readable formulas such as `tx_amt`, `SelYear`, `WinEnd`, `OpeningBal` |
 | Data validation | Fiscal-year dropdown, category, type, status, account and source lists |
 | Conditional formatting | Status tags, ▲/▼ colouring, data bars, variance colour scale, PASS/FAIL |
+| Power Query (M) | Imports and cleans a CSV ledger: types, validation, sort order |
 | Combo, doughnut and area charts | Revenue vs expenses, expense mix, gauge, balance and margin trends |
 | Formula-built text | Insight sentences assembled with `TEXT`, `IF` and `&` |
 | `NA()` chart helpers | Stop charts plotting months that have no data yet |
@@ -158,6 +159,7 @@ I used a seasonal forecast rather than a straight trend line (`FORECAST` / `TREN
 - Revenue, expenses, net profit, cash, category totals and the latest transactions were cross-checked against an independent pandas calculation; they match to the penny.
 - Switching to FY 2010 was tested: prior-year figures are correctly blank, and the forecast backtests against the actual Jan to Mar 2011 results (errors of -5.6%, +5.7% and +16.2% by month).
 - Corrupted data was injected deliberately (unknown category, negative amount, out-of-order date, invalid status): exactly the relevant checks turned to FAIL and no formula broke.
+- The Power Query template was run in desktop Excel against `data/helmquant_ledger.csv` and returned all 4,108 rows, sorted oldest first.
 - Package integrity was verified (XML validity, relationships, content types), and the ledger inside each workbook matches `data/helmquant_ledger.csv` row for row.
 
 ---
@@ -188,7 +190,7 @@ financial-analytics-dashboard/
 ├── scripts/
 │   └── build_ledger.py            # rebuilds the ledger from the UCI file
 ├── power_query/
-│   └── import_ledger.pq           # template to load a CSV ledger (untested)
+│   └── import_ledger.pq           # Power Query template to load a CSV ledger
 ├── images/                        # screenshots used in this README
 ├── LICENSE
 └── README.md
@@ -227,6 +229,7 @@ Download `online_retail_II.xlsx` from the UCI Machine Learning Repository first.
 # 📌 Future Improvements
 
 - Slicers for category and account (they need a desktop Excel session to set up safely)
+- Load the Power Query output straight into the Transactions table, with a refresh button, instead of copying rows
 - Forecast ranges (best and worst case) instead of a single line
 - Multi-currency support and cost-centre breakdowns
 - A short screen recording of the year switch and navigation
